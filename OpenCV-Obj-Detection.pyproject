@@ -1,0 +1,10 @@
+{
+    "files": [
+        "Vision.py",
+        "WindowCapture.py",
+        "base.py",
+        "form.ui",
+        "hex.png",
+        "play-button.png"
+    ]
+}
