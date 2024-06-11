@@ -34,10 +34,10 @@ A template image of a hexagon is used and it shown being tracked by the applicat
   - This class method will use the OpenCV match() method to attempt to 'match' the template with the window image
   - It will return an array of rectangle coordinate and sizes around the 'matched' image
 - def get_click_points(self, rectangles)
-  - This method recieves the array of rectangle returned by the find() method
+  - This method receives the array of rectangle returned by the find() method
   - It will return an array of center points for all the rectangle that were passed to the method
 - def draw_rectangles(self, haystack_img, rectangles)
-  - This method recieves the array of rectangle returned by the find() method
+  - This method receives the array of rectangle returned by the find() method
   - The method will 'draw' the rectangles passed onto the that was also passed
   - It will return the edited image
 - def draw_crosshairs(self, haystack_img, points)
@@ -79,6 +79,8 @@ A template image of a hexagon is used and it shown being tracked by the applicat
   - This will list the available windows
 - def get_screen_position(self, pos)
   - Returns the window's position
+
+
 
 
 
