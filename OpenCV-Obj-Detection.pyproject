@@ -1,5 +1,6 @@
 {
     "files": [
+        "HsvFilter.py",
         "Vision.py",
         "WindowCapture.py",
         "base.py",

@@ -20,7 +20,7 @@ wincap = WindowCapture()
 # initialize the Vision class
 vision_hex = Vision('hex.png')
 
-
+vision_hex.init_control_gui()
 
 loop_time = time()
 while(True):
@@ -28,9 +28,18 @@ while(True):
     # get an updated image of the game
     screenshot = wincap.get_screenshot()
 
-    # display the processed image
-    points = vision_hex.find(screenshot, 0.7, 'points')
-    #points = vision_gunsnbottle.find(screenshot, 0.7, 'points')
+    # pre-process thei mage
+    output_image = vision_hex.apply_hsv_filter(screenshot)
+
+    # Obj Detection
+    #rectangles = vision_hex.find(screenshot, 0.7)
+    #points = vision_hex.get_click_points(rectangles)
+
+    # Draw Crosshairs on image
+    #output_image = vision_hex.draw_crosshairs(screenshot, points)
+
+    # Displaye processed image
+    cv.imshow('Matches',  output_image)
 
     # debug the loop rate
     print('FPS {}'.format(1 / (time() - loop_time)))
