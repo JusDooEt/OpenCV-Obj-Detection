@@ -1,11 +1,12 @@
 # OpenCV Object Detection Application
 # Latest Update
-HSV (Hue, saturation, value) filtering has now been added to the program. This will allow the program to adjust the HSV values of the image being searched. This will allow the program to isolate specific objects based on their HSV value which will prevent a majority of false positive matches from occurring. A simple OpenCV built in GUI is also added to allow the programmer to experiment with all of the HSV values to find the best filter to use when matching a template image.
-- HsvFilter Class
-  - This is a very simple class that is used to store all the HSV values for a specific filter.
-  - This is a more organized way to store and organize multiple different filters for different template images.
-## Example Image
-![image](https://github.com/JusDooEt/OpenCV-Obj-Detection/assets/152052216/caf51b4f-1cc1-4434-8faf-27315ac9864d)
+- The project uses the pyautogui library to manipulate a user's mouse movement and input.
+  - The WindowCapture class creates an image from the user's screen and will atempt to locate the target image within the captured image.
+  - If the target image is found the WindowCapture class will create a set of coordinates of where the target was found in the image.
+  - The coordinates of the target image will be used to draw a crosshair within the capture image to visual indicate where a match is found.
+  - The program will use the pyautogui moveTo() method to move the user's curser to the coordinates provided and use the click() method to click where the curser had been moved to.
+    - This turns the program into a very basic bot that will automatically click on the image it is looking for on a user's screen.
+    - More code should be added to make this operation more accurate and efficient.
 
 
 # About
@@ -53,33 +54,40 @@ A template image of a hexagon is used and it shown being tracked by the applicat
  
 
 ## WindowCapture
-- This class contains seven properties
-  - w
-    - window width
-  - h
-    - window height
-  - hwnd
-    - window handle/name
-  - cropped_x
-    - The amount of pixels cropped on the x-axis
-  - cropped_y
-    -  The amount of pixels cropped on the y-axis
-  -  offset_x
-    - The amount of pixels offset of the original window on the x-axis
-  - offset_y
-    - The amount of pixels offset of the original window on the y-axis
-- Constructor
-  - The constructor will initialize all of the class properties
-  - If a window_name is passed then the constructor will attempt to find said window
-    - If the window is not found an exception will be thrown and the program will exit
-  - The title bar and window border is cropped and the measurements are stored in the relevant properties
-- def get_screenshot(self)
-  - This class method will return a single frame of the window that is targeted by the class and returns it
-- @staticmethod def list_window_names()
-  - This will list the available windows
-- def get_screen_position(self, pos)
-  - Returns the window's position
+### Properties
+- w
+  - window width
+- h
+  - window height
+- hwnd
+  - window handle/name
+- cropped_x
+  - The amount of pixels cropped on the x-axis
+- cropped_y
+  -  The amount of pixels cropped on the y-axis
+-  offset_x
+  - The amount of pixels offset of the original window on the x-axis
+- offset_y
+  - The amount of pixels offset of the original window on the y-axis
+### Constructor
+- The constructor will initialize all of the class properties
+- If a window_name is passed then the constructor will attempt to find said window
+  - If the window is not found an exception will be thrown and the program will exit
+- The title bar and window border is cropped and the measurements are stored in the relevant properties
+### def get_screenshot(self)
+- This class method will return a single frame of the window that is targeted by the class and returns it
+### @staticmethod def list_window_names()
+- This will list the available windows
+### def get_screen_position(self, pos)
+- Returns the window's position
 
+## HSV 
+(Hue, saturation, value) filtering. This will allow the program to adjust the HSV values of the image being searched. This will allow the program to isolate specific objects based on their HSV value which will prevent a majority of false positive matches from occurring. A simple OpenCV built in GUI is also added to allow the programmer to experiment with all of the HSV values to find the best filter to use when matching a template image.
+- HsvFilter Class
+  - This is a very simple class that is used to store all the HSV values for a specific filter.
+  - This is a more organized way to store and organize multiple different filters for different template images.
+## Example Image
+![image](https://github.com/JusDooEt/OpenCV-Obj-Detection/assets/152052216/caf51b4f-1cc1-4434-8faf-27315ac9864d)
 
 
 
