@@ -1,11 +1,11 @@
 # OpenCV Object Detection Application
 # Latest Update
 - The project uses the pyautogui library to manipulate a user's mouse movement and input.
-  - The WindowCapture class creates an image from the user's screen and will atempt to locate the target image within the captured image.
+  - The WindowCapture class creates an image from the user's screen and will attempt to locate the target image within the captured image.
   - If the target image is found the WindowCapture class will create a set of coordinates of where the target was found in the image.
   - The coordinates of the target image will be used to draw a crosshair within the capture image to visual indicate where a match is found.
   - The program will use the pyautogui moveTo() method to move the user's curser to the coordinates provided and use the click() method to click where the curser had been moved to.
-    - This turns the program into a very basic bot that will automatically click on the image it is looking for on a user's screen.
+    - This turns the program into a very basic bot that will automatically click on the image it is looking for on a user's screen if it is found.
     - More code should be added to make this operation more accurate and efficient.
 
 
@@ -88,8 +88,3 @@ A template image of a hexagon is used and it shown being tracked by the applicat
   - This is a more organized way to store and organize multiple different filters for different template images.
 ## Example Image
 ![image](https://github.com/JusDooEt/OpenCV-Obj-Detection/assets/152052216/caf51b4f-1cc1-4434-8faf-27315ac9864d)
-
-
-
-
-
