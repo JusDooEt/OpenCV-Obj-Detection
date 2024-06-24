@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 13.0.0, 2024-06-11T11:16:18. -->
+<!-- Written by QtCreator 13.0.0, 2024-06-16T14:51:56. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -208,7 +208,7 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">HsvFilter.py</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.C:/Qt_Projects/OpenCV-Obj-Detection/HsvFilter.py</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Qt_Projects/OpenCV-Obj-Detection/HsvFilter.py</value>
-    <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">false</value>
+    <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">true</value>
     <value type="QString" key="PythonEditor.RunConfiguation.Script">C:\Qt_Projects\OpenCV-Obj-Detection\HsvFilter.py</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>

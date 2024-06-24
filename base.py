@@ -1,10 +1,12 @@
 # Guide followed by @learncodebygaming
 # https://github.com/learncodebygaming/opencv_tutorials/tree/master
+# Test game: https://www.crazygames.com/game/shoot-bounce
 import sys
 import cv2 as cv
 import numpy as np
 import os
-from time import time
+import pyautogui
+from time import time, sleep
 from WindowCapture import WindowCapture
 from Vision import Vision
 
@@ -28,18 +30,25 @@ while(True):
     # get an updated image of the game
     screenshot = wincap.get_screenshot()
 
-    # pre-process thei mage
+    # pre-process the mage
     output_image = vision_hex.apply_hsv_filter(screenshot)
 
     # Obj Detection
-    #rectangles = vision_hex.find(screenshot, 0.7)
-    #points = vision_hex.get_click_points(rectangles)
-
+    rectangles = vision_hex.find(screenshot, 0.7)
+    points = vision_hex.get_click_points(rectangles)
     # Draw Crosshairs on image
-    #output_image = vision_hex.draw_crosshairs(screenshot, points)
+    output_image = vision_hex.draw_crosshairs(screenshot, points)
 
     # Displaye processed image
     cv.imshow('Matches',  output_image)
+
+    # take bot actions
+    if len(rectangles) > 0:
+        targets = points
+        target = wincap.get_screen_position(targets[0])
+        pyautogui.moveTo(x = target[0], y = target[1]);
+        pyautogui.click()
+        sleep(1)
 
     # debug the loop rate
     print('FPS {}'.format(1 / (time() - loop_time)))
